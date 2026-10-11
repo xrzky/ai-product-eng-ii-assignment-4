@@ -1,0 +1,31 @@
+{
+  "name": "agent-sandbox",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx --env-file=.env src/index.ts",
+    "eval:contain": "tsx --env-file=.env src/evals/contain.ts",
+    "eval:abstention": "tsx --env-file=.env src/evals/abstention.ts",
+    "eval:geval": "tsx --env-file=.env src/evals/geval-faithfulness.ts",
+    "eval:run": "pnpm eval:contain && pnpm eval:abstention && pnpm eval:geval",
+    "typecheck": "tsc --noEmit"
+  },
+  "packageManager": "pnpm@12.5.1",
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@anvia/core": "^1.5.0",
+    "@anvia/lens": "^1.2.0",
+    "@anvia/openai": "^1.1.5",
+    "@anvia/sandbox": "^1.1.4",
+    "@anvia/studio": "^1.2.4",
+    "@tavily/core": "^0.7.14",
+    "dotenv": "^18.0.3",
+    "dotenv-cli": "^11.0.0",
+    "zod": "^4.6.5"
+  }
+}
